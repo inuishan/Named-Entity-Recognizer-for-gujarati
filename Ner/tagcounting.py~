@@ -1,0 +1,16 @@
+import xml.etree.ElementTree as ET
+import sys
+
+def prepareDictionary(f):
+	tree = ET.parse(f)
+	dic = {}
+	for elem in tree.iter(tag='ENAMEX'):
+		a = elem.attrib
+		l = a.values()
+		s = ''.join(l)
+		print s			
+	
+
+g = open(sys.argv[1],'rb')
+
+prepareDictionary(g)
